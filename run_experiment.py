@@ -6,6 +6,9 @@ import shutil
 import numpy as np
 import pandas as pd
 import sys
+
+from DataPrepare.schemas import gen_DB0_schema
+
 sys.path.append('/home/ubuntu/BayesCard')
 from DataPrepare.join_data_preparation import prepare_sample_hdf
 from DataPrepare.prepare_single_tables import prepare_all_tables
