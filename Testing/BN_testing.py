@@ -67,13 +67,13 @@ def load_ensemble(schema, model_path):
 
 
 def evaluate_cardinality_imdb(schema, ensemble_location, query_filename, infer_algo, learning_algo, max_parents):
-    query_filename = "/home/ubuntu/BayesCard/Benchmark/IMDB/job-light.sql"
-    parsed_queries, true = prepare_join_queries(schema, ensemble_location, pairwise_rdc_path=None, 
+    # query_filename = "/home/ubuntu/BayesCard/Benchmark/IMDB/job-light.sql"
+    parsed_queries, true = prepare_join_queries(schema, ensemble_location, pairwise_rdc_path=None,
                                                 query_filename=query_filename, true_card_exist=True)
-    
+
     with open(query_filename, "rb") as f:
         real_query = f.readlines()
-    
+
     bn_ensemble = load_ensemble(schema, ensemble_location)
 
     queries = bn_ensemble.parse_query_all(parsed_queries)
